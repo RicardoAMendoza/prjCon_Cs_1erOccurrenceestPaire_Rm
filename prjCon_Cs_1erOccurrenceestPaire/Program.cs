@@ -21,7 +21,7 @@ namespace prjCon_Cs_1erOccurrenceestPaire
         static void Main(string[] args)
         { 
             // variable
-            int[] tabNb = { 1, 88, 5, 99, 7, 3, 44, 771, 1, 22 };
+            int[] tabNb = { 10000,333,44,1111};
             Console.WriteLine("\n\n1er OCURRENCE EST PAIRE", Console.ForegroundColor = ConsoleColor.Green);
             Console.WriteLine("\nCHAINE D'INTEGERS : ", Console.ForegroundColor = ConsoleColor.Gray);
             // Console.WriteLine("\nint[] tabNb = { 1, 1, 5, 44, 7, 3, 5, 771, 1, 22 };", Console.ForegroundColor = ConsoleColor.Gray);
@@ -36,7 +36,6 @@ namespace prjCon_Cs_1erOccurrenceestPaire
             // Console.WriteLine(i); // error i no declared
             Console.WriteLine("\n1er occurrence paire : " + fncPair(tabNb), Console.ForegroundColor = ConsoleColor.Gray);
 
-
             Console.WriteLine("\n\n1er OCURRENCE EST PAIRE", Console.ForegroundColor = ConsoleColor.Green);
             Console.WriteLine("\nCHAINE D'INTEGERS : ", Console.ForegroundColor = ConsoleColor.Gray);
             Console.WriteLine("\nint[] tabRandom = new int[10]; ", Console.ForegroundColor = ConsoleColor.Gray);
@@ -44,7 +43,6 @@ namespace prjCon_Cs_1erOccurrenceestPaire
 
             int[] tabRandom = new int[10]; /* arraySimple is an arraySimple of 10 intengers */
             Random rnd = new Random(); /* Random integers */
-
             /* initialize elements of arraySimple n */
             for (int j = 0; j < tabRandom.Length; j++)
             {
@@ -61,9 +59,6 @@ namespace prjCon_Cs_1erOccurrenceestPaire
             }
             Console.WriteLine("\n1er occurrence paire : " + fncPair(tabRandom), Console.ForegroundColor = ConsoleColor.Yellow);
 
-
-
-
             Console.WriteLine("\n\n1er OCURRENCE EST PAIRE", Console.ForegroundColor = ConsoleColor.Green);
             Console.WriteLine("\nCHAINE D'INTEGERS : ", Console.ForegroundColor = ConsoleColor.Gray);
 
@@ -77,22 +72,22 @@ namespace prjCon_Cs_1erOccurrenceestPaire
             c = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("\nElement 4 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
             d = Convert.ToInt32(Console.ReadLine());
-
             Console.WriteLine("\nElement 5 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
             e = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("\nElement 6 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
-            f = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\nElement 7 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
-            h = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\nElement 8 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
-            k = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("\nElement 9 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
-            l = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\nElement 10 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
-            m = Convert.ToInt32(Console.ReadLine());
+            //f = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("\nElement 7 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
+            //h = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("\nElement 8 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
+            //k = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("\nElement 9 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
+            //l = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("\nElement 10 = ?\n", Console.ForegroundColor = ConsoleColor.Cyan);
+            //m = Convert.ToInt32(Console.ReadLine());
 
-            int[] arraySimple = { a, b, c, d, e, f, h, k, l, m };
+            // int[] arraySimple = { a, b, c, d, e, f, h, k, l, m };
+            int[] arraySimple = { a, b, c, d, e};
 
             for (int w = 0; w < arraySimple.Length; w++)
             {
@@ -101,12 +96,7 @@ namespace prjCon_Cs_1erOccurrenceestPaire
               
             Console.WriteLine("\n1er occurrence paire : " + fncPair(arraySimple), Console.ForegroundColor = ConsoleColor.Gray);
 
-
-
-
-
             Console.WriteLine("\n\nLAMBADA EXPRESION", Console.ForegroundColor = ConsoleColor.Green);
-
             int x = 5;
             Console.WriteLine("\n\n\nLambda expression : " + getSquare(x),Console.ForegroundColor=ConsoleColor.Blue);
 
@@ -125,26 +115,22 @@ namespace prjCon_Cs_1erOccurrenceestPaire
         // int? -> is nullable
         private static int? fncPair(int[] xarrayNb)
         {
-            // cree un stringBuilder
-            // StringBuilder class can be boots performance when concatenating many strings together in a loop
-            StringBuilder builder = new StringBuilder();
-            // var builder = new StringBuilder(); -> StringBuilder builder es igual var builder
+            // cree un stringBuilder 
+            StringBuilder xmot = new StringBuilder(); /* StringBuilder class can be boots performance when concatenating many strings together in a loop */
+            // var xmot = new StringBuilder(); -> StringBuilder builder es igual var builder
 
             // voir 1 a 1 les elements du tableau
             for (int i = 0; i < xarrayNb.Length; i++)
             {
                 // prend le nb ocurrence d 1 element
-                // String.Builder.Append -> Appends information to the end of the current StringBuilder
-                //builder.Append(xarrayNb[i].ToString());
-                builder.Append(xarrayNb[i].ToString());
+                xmot.Append(xarrayNb[i].ToString()); /* String.Builder.Append -> Appends information to the end of the current StringBuilder */
                 // si pair -> retourne l'element
-                if (builder.Length % 2 == 0)
+                if (xmot.Length % 2 == 0)
                 {
                     return xarrayNb[i];
                 }
-                // efface le stringBuilder
-                // Removes a specified number of characteres from the current StringBuilder
-                builder.Remove(0, builder.Length);
+                // efface le stringBuilder 
+                xmot.Remove(0, xmot.Length); /* Removes a specified number of characteres from the current StringBuilder */
             }
             return null;
         }
